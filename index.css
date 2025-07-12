@@ -54,7 +54,7 @@ body {
   background: linear-gradient(90deg, #ff6a00, #ee0979);
 
 }
-.hero h1 {
+/* .hero h1 {
   font-size: 48px;
   margin-bottom: 20px;
 }
@@ -74,6 +74,63 @@ body {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease-in-out;
   border: 2px solid #fd510d;
+}
+
+.cta-btn:hover {
+  background-color: #ff5500;
+  color: white;
+  transform: scale(1.05);
+  box-shadow: 0 6px 18px rgba(216, 10, 10, 0.3);
+} */
+
+/* Animation keyframes */
+@keyframes slideInFromLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Apply animation to hero elements */
+.hero h1,
+.hero p,
+.hero .cta-btn {
+  animation: slideInFromLeft 2s ease-out forwards;
+}
+
+/* Add delay to each element for staggered effect */
+.hero h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+  animation-delay: 0.4s;
+}
+.hero p {
+  font-size: 18px;
+  margin-bottom: 30px;
+  animation-delay: 0.4s;
+}
+.hero .cta-btn {
+  animation-delay: 0.4s;
+}
+
+/* Style the button properly (add . before class name) */
+.cta-btn {
+  display: inline-block;
+  background-color: white;
+  color: #fd810d;
+  padding: 12px 28px;
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+  border: 2px solid #fd510d;
+  opacity: 0; /* Start hidden, animation will fade it in */
 }
 
 .cta-btn:hover {
